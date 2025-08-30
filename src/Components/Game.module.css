@@ -1,0 +1,658 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gameContainer {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Game Header - Clean and Simple */
+.gameHeader {
+  background: rgba(0, 0, 0, 0.8);
+  border-bottom: 3px solid #4CAF50;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gameInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.roundInfo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.roundLabel {
+  background: #4CAF50;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.targetScore {
+  background: #FF9800;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
+}
+
+.currentScore {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.scoreLabel {
+  font-size: 16px;
+  color: #E0E0E0;
+  font-weight: 500;
+}
+
+.scoreValue {
+  background: #2196F3;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Timer - Simple and Clear */
+.timerContainer {
+  background: #F44336;
+  padding: 20px 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.4);
+  border: 3px solid #FF5722;
+}
+
+.timerLabel {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.timer {
+  font-size: 36px;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Start Screen - Clean Design */
+.gameStart {
+  background: rgba(0, 0, 0, 0.9);
+  border: 3px solid #4CAF50;
+  border-radius: 30px;
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.gameStart h1 {
+  font-size: clamp(36px, 8vw, 56px);
+  margin-bottom: 30px;
+  color: #4CAF50;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.gameStart p {
+  font-size: clamp(16px, 4vw, 20px);
+  margin-bottom: 20px;
+  color: #E0E0E0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnStart {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  border: none;
+  color: white;
+  padding: 18px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+  border: 3px solid #45a049;
+}
+
+.btnStart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(76, 175, 80, 0.6);
+  background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+}
+
+/* Zelensky Character - Simple and Clean */
+.zelenskyContainer {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.zelenskyImage {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  border: 3px solid #4CAF50;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.zelenskyImage:hover {
+  transform: scale(1.05);
+}
+
+.zelenskyFallback {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(76, 175, 80, 0.2);
+  border: 3px solid #4CAF50;
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4CAF50;
+  text-align: center;
+}
+
+.zelenskyMessage {
+  background: rgba(76, 175, 80, 0.1);
+  border: 2px solid #4CAF50;
+  border-radius: 20px;
+  padding: 20px 25px;
+  margin: 25px auto;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 600px;
+  color: #E0E0E0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Zelensky - Subtle */
+.backgroundZelensky {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.backgroundZelenskyImage {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  filter: blur(3px) brightness(0.6);
+  opacity: 0.5;
+}
+
+.listeningMessage {
+  font-size: 24px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+
+/* Game Content - Clean Layout */
+.gameContent {
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #2196F3;
+  border-radius: 30px;
+  padding: 40px 30px;
+  margin: 30px auto;
+  max-width: 1200px;
+  width: 95%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.jokesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.jokeCard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #E0E0E0;
+  border-radius: 20px;
+  padding: 30px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.jokeCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #4CAF50;
+  box-shadow: 0 15px 40px rgba(76, 175, 80, 0.3);
+}
+
+.jokeCard.selected {
+  background: rgba(76, 175, 80, 0.2);
+  border-color: #4CAF50;
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px rgba(76, 175, 80, 0.4);
+}
+
+.jokeText {
+  font-size: clamp(14px, 3vw, 18px);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 500;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E0E0E0;
+}
+
+.jokePoints {
+  background: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  animation: fadeIn 0.5s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.noJokes {
+  text-align: center;
+  padding: 40px;
+  font-size: 20px;
+  color: #E0E0E0;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 2px solid #E0E0E0;
+}
+
+/* Game End - Clean Design */
+.gameEnd {
+  background: rgba(0, 0, 0, 0.9);
+  border: 3px solid #4CAF50;
+  border-radius: 30px;
+  padding: 60px 40px;
+  margin: 40px auto;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.gameEnd.won {
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.gameEnd.lost {
+  border-color: #F44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.gameEnd h2 {
+  font-size: clamp(24px, 6vw, 36px);
+  margin-bottom: 30px;
+  color: #4CAF50;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.gameEnd.lost h2 {
+  color: #F44336;
+}
+
+.gameEnd p {
+  font-size: clamp(16px, 4vw, 20px);
+  margin-bottom: 20px;
+  color: #E0E0E0;
+}
+
+.gameEndButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btnPrimary, .btnSecondary {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border: 3px solid transparent;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border-color: #45a049;
+}
+
+.btnSecondary {
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+  color: white;
+  border-color: #F57C00;
+}
+
+.btnPrimary:hover, .btnSecondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Total Winnings - Simple Design */
+.totalWinnings {
+  background: rgba(255, 193, 7, 0.2);
+  border: 3px solid #FFC107;
+  border-radius: 25px;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 700;
+  color: #FFC107;
+  margin: 30px auto;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 15px 40px rgba(255, 193, 7, 0.3);
+}
+
+/* Reset Button - Simple and Clear */
+.resetButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(244, 67, 54, 0.9);
+  border: 2px solid #D32F2F;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resetButton:hover {
+  background: rgba(244, 67, 54, 1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .jokesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .backgroundZelenskyImage {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gameHeader {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .jokesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .gameStart, .gameContent, .gameEnd {
+    padding: 40px 20px;
+    margin: 20px 15px;
+    width: 95%;
+  }
+  
+  .timer {
+    font-size: 28px;
+  }
+  
+  .gameEndButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .jokeCard {
+    padding: 20px;
+    min-height: 150px;
+  }
+  
+  .zelenskyImage {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .backgroundZelenskyImage {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .listeningMessage {
+    font-size: 20px;
+  }
+  
+  .btnStart {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameContainer {
+    padding: 0;
+  }
+  
+  .gameHeader {
+    border-radius: 0;
+    margin-bottom: 10px;
+  }
+  
+  .gameStart, .gameContent, .gameEnd {
+    padding: 30px 15px;
+    margin: 15px 10px;
+    border-radius: 20px;
+  }
+  
+  .jokesGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .jokeCard {
+    padding: 15px;
+    min-height: 120px;
+  }
+  
+  .totalWinnings {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+  
+  .zelenskyImage {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .backgroundZelenskyImage {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .listeningMessage {
+    font-size: 16px;
+  }
+  
+  .btnStart {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+  
+  .timer {
+    font-size: 24px;
+  }
+  
+  .timerContainer {
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .gameStart h1 {
+    font-size: 28px;
+  }
+  
+  .gameStart p {
+    font-size: 14px;
+  }
+  
+  .btnStart {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .jokeCard {
+    padding: 10px;
+    min-height: 100px;
+  }
+  
+  .jokeText {
+    font-size: 12px;
+  }
+  
+  .zelenskyImage {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .backgroundZelenskyImage {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .listeningMessage {
+    font-size: 14px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .gameContainer {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .gameHeader {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+  
+  .gameStart, .gameContent, .gameEnd {
+    padding: 20px;
+    margin: 10px 20px;
+  }
+  
+  .jokesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .zelenskyImage {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .backgroundZelenskyImage {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .btnStart {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+} 
